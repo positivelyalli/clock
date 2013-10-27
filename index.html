@@ -1,0 +1,73 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <style type="text/css">
+            body{
+                background-color:#99ff99;
+            }
+            #txt{
+                font-family:arial;     
+            } 
+            .center{ 
+                text-align: center;
+                font-family:arial;
+            }
+            #myoutercontainer { 
+                position:relative;
+                border:1px solid yellow;
+            }
+            #myinnercontainer {
+                position:absolute; 
+                top:40%; 
+                height:70em; 
+                margin-top:-5em ;
+                border:1px solid purple;
+                left: 50%;
+                margin-left: -5%;
+            }
+        </style> 
+
+        <script>
+            function startTime()
+            {
+                var today = new Date();
+                var h = today.getHours();
+                var m = today.getMinutes();
+                var s = today.getSeconds();
+        // add a zero in front of numbers<10
+                m = checkTime(m);
+                s = checkTime(s);
+                document.getElementById('txt').innerHTML = h + ":" + m + ":" + s;
+                t = setTimeout(function() {
+                    startTime()
+                }, 500);
+            }
+
+            function checkTime(i)
+            {
+                if (i < 10)
+                {
+                    i = "0" + i;
+                }
+                return i;
+            }
+        </script>
+
+    </head>
+
+    <body onload="startTime()">
+        <header>
+            <div class="center" id="myoutercontainer">Digital Clock</div>
+        </header>  
+        <div class="center" id="myinnercontainer">
+            <div id="txt"> 
+            </div>            
+
+        </div>  
+    </body>
+</html>
