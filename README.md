@@ -1,4 +1,3 @@
-shittyclock
+clock
 ===========
-
-Shittyclock
+clock
